@@ -40,8 +40,8 @@ pst = pytz.timezone('America/Los_Angeles')
 # Sends an email with the given subject and content using SendGrid.
 def send_email(subject, content):
     # Construct the email
-    recipients = ['henlij@gmail.com']
-    # recipients = ['international@calstatela.edu', 'jhenlin2@calstatela.edu']
+    # recipients = ['henlij@gmail.com']
+    recipients = ['international@calstatela.edu', 'jhenlin2@calstatela.edu']
     message = Mail(
         from_email='cetltech@calstatela.edu',
         to_emails=recipients,

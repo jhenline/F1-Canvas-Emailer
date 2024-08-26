@@ -1,5 +1,5 @@
 # Jeff Henline / 2023-11-16
-# Script was created for Rigzin's F-1 Mandatory Workshop
+# Script was created for F-1 Mandatory Workshop
 # 
 # Script checks for new quiz submissions since the last run and 
 # sends an email with the list of students who submitted the quiz.

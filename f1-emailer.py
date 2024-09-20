@@ -10,8 +10,13 @@ import os
 from dateutil import parser
 import pytz
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from sendgrid.helpers.mail import Mail, TrackingSettings, ClickTracking
 import configparser
+
+# Disable click tracking
+tracking_settings = TrackingSettings()
+tracking_settings.click_tracking = ClickTracking(enable=False, enable_text=False)
+message.tracking_settings = tracking_settings
 
 # Create a ConfigParser object
 config = configparser.ConfigParser()
@@ -48,6 +53,11 @@ def send_email(subject, content):
         subject=subject,
         html_content=content
     )
+
+    # Disable click tracking
+    tracking_settings = TrackingSettings()
+    tracking_settings.click_tracking = ClickTracking(enable=False, enable_text=False)
+    message.tracking_settings = tracking_settings
 
     # Send the email
     try:
